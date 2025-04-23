@@ -1,157 +1,187 @@
-14:56:16 [INFO] Opening target process: csgo.exe
-14:56:16 [INFO] Starting signature scanning: 58 items
-14:56:16 [INFO] Found signature: dwClientState => 0x59F19C
-14:56:16 [INFO] Found signature: dwClientState_GetLocalPlayer => 0x180
-14:56:16 [INFO] Found signature: dwClientState_IsHLTV => 0x4D48
-14:56:16 [INFO] Found signature: dwClientState_Map => 0x28C
-14:56:16 [INFO] Found signature: dwClientState_MapDirectory => 0x188
-14:56:16 [INFO] Found signature: dwClientState_MaxPlayer => 0x388
-14:56:16 [INFO] Found signature: dwClientState_PlayerInfo => 0x52C0
-14:56:16 [INFO] Found signature: dwClientState_State => 0x108
-14:56:16 [INFO] Found signature: dwClientState_ViewAngles => 0x4D90
-14:56:16 [INFO] Found signature: clientstate_delta_ticks => 0x174
-14:56:16 [INFO] Found signature: clientstate_last_outgoing_command => 0x4D2C
-14:56:16 [INFO] Found signature: clientstate_choked_commands => 0x4D30
-14:56:16 [INFO] Found signature: clientstate_net_channel => 0x9C
-14:56:16 [INFO] Found signature: dwEntityList => 0x4E051DC
-14:56:16 [INFO] Found signature: dwForceAttack => 0x3233024
-14:56:16 [INFO] Found signature: dwForceAttack2 => 0x3233030
-14:56:16 [INFO] Found signature: dwForceBackward => 0x3233078
-14:56:16 [INFO] Found signature: dwForceForward => 0x323306C
-14:56:16 [INFO] Found signature: dwForceJump => 0x52C0F50
-14:56:16 [INFO] Found signature: dwForceLeft => 0x3233084
-14:56:16 [INFO] Found signature: dwForceRight => 0x3233090
-14:56:16 [INFO] Found signature: dwGameDir => 0x63AE00
-14:56:16 [INFO] Found signature: dwGameRulesProxy => 0x5334764
-14:56:16 [INFO] Found signature: dwGetAllClasses => 0xE10F84
-14:56:16 [INFO] Found signature: dwGlobalVars => 0x59EE60
-14:56:16 [INFO] Found signature: dwGlowObjectManager => 0x535FCB8
-14:56:16 [INFO] Found signature: dwInput => 0x52627B0
-14:56:16 [INFO] Found signature: dwInterfaceLinkList => 0x99F7D4
-14:56:16 [INFO] Found signature: dwLocalPlayer => 0xDEF97C
-14:56:16 [INFO] Found signature: dwMouseEnable => 0x523E410
-14:56:16 [INFO] Found signature: dwMouseEnablePtr => 0x523E3E0
-14:56:16 [INFO] Found signature: dwPlayerResource => 0x3231380
-14:56:16 [INFO] Found signature: dwRadarBase => 0x523BCB4
-14:56:16 [INFO] Found signature: dwSensitivity => 0xDF3B98
-14:56:16 [INFO] Found signature: dwSensitivityPtr => 0xDF3B98
-14:56:16 [INFO] Found signature: dwSetClanTag => 0x8DAB0
-14:56:16 [INFO] Found signature: dwViewMatrix => 0x4DF6024
-14:56:16 [INFO] Found signature: dwWeaponTable => 0x526388C
-14:56:16 [INFO] Found signature: dwWeaponTableIndex => 0x326C
-14:56:16 [INFO] Found signature: dwYawPtr => 0xDF3928
-14:56:16 [INFO] Found signature: dwZoomSensitivityRatioPtr => 0xDF9398
-14:56:16 [INFO] Found signature: dwbSendPackets => 0xDD2D2
-14:56:16 [INFO] Found signature: dwppDirect3DDevice9 => 0xA62C0
-14:56:16 [INFO] Found signature: m_pStudioHdr => 0x2950
-14:56:16 [INFO] Found signature: m_yawClassPtr => 0xDF3928
-14:56:16 [INFO] Found signature: m_pitchClassPtr => 0x523E308
-14:56:16 [INFO] Found signature: interface_engine_cvar => 0x3FA9C
-14:56:16 [INFO] Found signature: convar_name_hash_table => 0x301A0
-14:56:16 [INFO] Found signature: m_bDormant => 0xED
-14:56:16 [INFO] Found signature: model_ambient_min => 0x5A1194
-14:56:16 [INFO] Found signature: set_abs_angles => 0x1EA950
-14:56:16 [INFO] Found signature: set_abs_origin => 0x1EA790
-14:56:16 [INFO] Found signature: is_c4_owner => 0x3EA8A0
-14:56:16 [INFO] Found signature: force_update_spectator_glow => 0x3DD09A
-14:56:16 [INFO] Found signature: anim_overlays => 0x2990
-14:56:16 [INFO] Found signature: m_flSpawnTime => 0x103C0
-14:56:16 [INFO] Found signature: find_hud_element => 0x53B03A40
-14:56:16 [INFO] Found signature: m_bIsLocalPlayer => 0x3628
-14:56:16 [INFO] Finished signature scanning: 58/58 items successful
-14:56:16 [INFO] Starting netvar scanning: 94 items
-14:56:16 [INFO] Found netvar: m_ArmorValue => 0x117CC
-14:56:16 [INFO] Found netvar: m_Collision => 0x320
-14:56:16 [INFO] Found netvar: m_CollisionGroup => 0x474
-14:56:16 [INFO] Found netvar: m_Local => 0x2FCC
-14:56:16 [INFO] Found netvar: m_MoveType => 0x25B
-14:56:16 [INFO] Found netvar: m_OriginalOwnerXuidHigh => 0x31D4
-14:56:16 [INFO] Found netvar: m_OriginalOwnerXuidLow => 0x31D0
-14:56:16 [INFO] Found netvar: m_aimPunchAngle => 0x303C
-14:56:16 [INFO] Found netvar: m_aimPunchAngleVel => 0x3048
-14:56:16 [INFO] Found netvar: m_bGunGameImmunity => 0x9990
-14:56:16 [INFO] Found netvar: m_bHasDefuser => 0x117DC
-14:56:16 [INFO] Found netvar: m_bHasHelmet => 0x117C0
-14:56:16 [INFO] Found netvar: m_bInReload => 0x3248
-14:56:16 [INFO] Found netvar: m_bIsDefusing => 0x997C
-14:56:16 [INFO] Found netvar: m_bIsScoped => 0x9974
-14:56:16 [INFO] Found netvar: m_bSpotted => 0x93D
-14:56:16 [INFO] Found netvar: m_bSpottedByMask => 0x980
-14:56:16 [INFO] Found netvar: m_dwBoneMatrix => 0x268C
-14:56:16 [INFO] Found netvar: m_fAccuracyPenalty => 0x3340
-14:56:16 [INFO] Found netvar: m_fFlags => 0x104
-14:56:16 [INFO] Found netvar: m_hViewModel => 0x3308
-14:56:16 [INFO] Found netvar: m_flFallbackWear => 0x31E0
-14:56:16 [INFO] Found netvar: m_flFlashDuration => 0x10470
-14:56:16 [INFO] Found netvar: m_flFlashMaxAlpha => 0x1046C
-14:56:16 [INFO] Found netvar: m_flNextPrimaryAttack => 0x3248
-14:56:16 [INFO] Found netvar: m_hActiveWeapon => 0x2F08
-14:56:16 [INFO] Found netvar: m_hMyWeapons => 0x2F08
-14:56:16 [INFO] Found netvar: m_hObserverTarget => 0x339C
-14:56:16 [INFO] Found netvar: m_hOwner => 0x29DC
-14:56:16 [INFO] Found netvar: m_hOwnerEntity => 0x14C
-14:56:16 [INFO] Found netvar: m_iAccountID => 0x2FD8
-14:56:16 [INFO] Found netvar: m_iClip1 => 0x3274
-14:56:16 [INFO] Found netvar: m_zoomLevel => 0x33E0
-14:56:16 [INFO] Found netvar: m_iCompetitiveRanking => 0x1A84
-14:56:16 [INFO] Found netvar: m_iCompetitiveWins => 0x1B88
-14:56:16 [INFO] Found netvar: m_iCrosshairId => 0x117DC
-14:56:16 [INFO] Found netvar: m_iEntityQuality => 0x2FBC
-14:56:16 [INFO] Found netvar: m_iFOVStart => 0x31F8
-14:56:16 [INFO] Found netvar: m_iGlowIndex => 0x10470
-14:56:16 [INFO] Found netvar: m_iHealth => 0x100
-14:56:16 [INFO] Found netvar: m_iItemDefinitionIndex => 0x2FBA
-14:56:16 [INFO] Found netvar: m_iItemIDHigh => 0x2FD0
-14:56:16 [INFO] Found netvar: m_iObserverMode => 0x3388
-14:56:16 [INFO] Found netvar: m_iShotsFired => 0x103E0
-14:56:16 [INFO] Found netvar: m_iState => 0x3268
-14:56:16 [INFO] Found netvar: m_iTeamNum => 0xF4
-14:56:16 [INFO] Found netvar: m_lifeState => 0x25F
-14:56:16 [INFO] Found netvar: m_nFallbackPaintKit => 0x31D8
-14:56:16 [INFO] Found netvar: m_nFallbackSeed => 0x31DC
-14:56:16 [INFO] Found netvar: m_nFallbackStatTrak => 0x31E4
-14:56:16 [INFO] Found netvar: m_iDefaultFOV => 0x333C
-14:56:16 [INFO] Found netvar: m_iFOV => 0x31F4
-14:56:16 [INFO] Found netvar: m_nForceBone => 0x268C
-14:56:16 [INFO] Found netvar: m_nTickBase => 0x3440
-14:56:16 [INFO] Found netvar: m_rgflCoordinateFrame => 0x474
-14:56:16 [INFO] Found netvar: m_szCustomName => 0x304C
-14:56:16 [INFO] Found netvar: m_szLastPlaceName => 0x35C4
-14:56:16 [INFO] Found netvar: m_vecOrigin => 0x138
-14:56:16 [INFO] Found netvar: m_vecVelocity => 0x114
-14:56:16 [INFO] Found netvar: m_vecViewOffset => 0x108
-14:56:16 [INFO] Found netvar: m_viewPunchAngle => 0x3030
-14:56:16 [INFO] Found netvar: m_thirdPersonViewAngles => 0x31E4
-14:56:16 [INFO] Found netvar: m_clrRender => 0x70
-14:56:16 [INFO] Found netvar: m_bBombTicking => 0x2990
-14:56:16 [INFO] Found netvar: m_bBombDefused => 0x29C0
-14:56:16 [INFO] Found netvar: m_flC4Blow => 0x29A0
-14:56:16 [INFO] Found netvar: m_hBombDefuser => 0x29C4
-14:56:16 [INFO] Found netvar: m_flTimerLength => 0x29A4
-14:56:16 [INFO] Found netvar: m_flDefuseLength => 0x29B8
-14:56:16 [INFO] Found netvar: m_flDefuseCountDown => 0x29BC
-14:56:16 [INFO] Found netvar: m_nBombSite => 0x2994
-14:56:16 [INFO] Found netvar: cs_gamerules_data => 0x0
-14:56:16 [INFO] Found netvar: m_SurvivalRules => 0xD00
-14:56:16 [INFO] Found netvar: m_SurvivalGameRuleDecisionTypes => 0x1328
-14:56:16 [INFO] Found netvar: m_bIsValveDS => 0x7C
-14:56:16 [INFO] Found netvar: m_bFreezePeriod => 0x20
-14:56:16 [INFO] Found netvar: m_bBombPlanted => 0x9A5
-14:56:16 [INFO] Found netvar: m_bIsQueuedMatchmaking => 0x74
-14:56:16 [INFO] Found netvar: m_flSimulationTime => 0x268
-14:56:16 [INFO] Found netvar: m_flLowerBodyYawTarget => 0x9ADC
-14:56:16 [INFO] Found netvar: m_angEyeAnglesX => 0x117D0
-14:56:16 [INFO] Found netvar: m_angEyeAnglesY => 0x117D4
-14:56:16 [INFO] Found netvar: m_flNextAttack => 0x2D80
-14:56:16 [INFO] Found netvar: m_iMostRecentModelBoneCounter => 0x268C
-14:56:16 [INFO] Found netvar: m_flLastBoneSetupTime => 0x28C0
-14:56:16 [INFO] Found netvar: m_bStartedArming => 0x3400
-14:56:16 [INFO] Found netvar: m_bUseCustomBloomScale => 0x9DA
-14:56:16 [INFO] Found netvar: m_bUseCustomAutoExposureMin => 0x9D8
-14:56:16 [INFO] Found netvar: m_bUseCustomAutoExposureMax => 0x9D9
-14:56:16 [INFO] Found netvar: m_flCustomBloomScale => 0x9E4
-14:56:16 [INFO] Found netvar: m_flCustomAutoExposureMin => 0x9DC
-14:56:16 [INFO] Found netvar: m_flCustomAutoExposureMax => 0x9E0
-14:56:16 [INFO] Found netvar: m_nViewModelIndex => 0x29D0
-14:56:16 [INFO] Found netvar: m_nModelIndex => 0x258
-14:56:16 [INFO] Finished netvar scanning: 94/94 items successful
+timestamp = 1693948329
+
+[signatures]
+# Client State
+dwClientState = 59F19C
+dwClientState_GetLocalPlayer = 180
+dwClientState_IsHLTV = 4D48
+dwClientState_Map = 28C
+dwClientState_MapDirectory = 188
+dwClientState_MaxPlayer = 388
+dwClientState_PlayerInfo = 52C0
+dwClientState_State = 108
+dwClientState_ViewAngles = 4D90
+clientstate_delta_ticks = 174
+clientstate_last_outgoing_command = 4D2C
+clientstate_choked_commands = 4D30
+clientstate_net_channel = 9C
+
+# Entity and Player
+dwEntityList = 4E051DC
+dwLocalPlayer = DEF97C
+dwPlayerResource = 3231380
+dwRadarBase = 523BCB4
+m_bIsLocalPlayer = 3628
+m_flSpawnTime = 103C0
+
+# Input and Movement
+dwForceAttack = 3233024
+dwForceAttack2 = 3233030
+dwForceBackward = 3233078
+dwForceForward = 323306C
+dwForceJump = 52C0F50
+dwForceLeft = 3233084
+dwForceRight = 3233090
+dwInput = 52627B0
+
+# Game and Rendering
+dwGameDir = 63AE00
+dwGameRulesProxy = 5334764
+dwGetAllClasses = E10F84
+dwGlobalVars = 59EE60
+dwGlowObjectManager = 535FCB8
+dwViewMatrix = 4DF6024
+dwppDirect3DDevice9 = A62C0
+model_ambient_min = 5A1194
+
+# Mouse and Sensitivity
+dwMouseEnable = 523E410
+dwMouseEnablePtr = 523E3E0
+dwSensitivity = DF3B98
+dwSensitivityPtr = DF3B98
+dwYawPtr = DF3928
+dwZoomSensitivityRatioPtr = DF9398
+m_yawClassPtr = DF3928
+m_pitchClassPtr = 523E308
+
+# Weapons and Equipment
+dwWeaponTable = 526388C
+dwWeaponTableIndex = 326C
+is_c4_owner = 3EA8A0
+
+# Miscellaneous
+dwInterfaceLinkList = 99F7D4
+dwSetClanTag = 8DAB0
+dwbSendPackets = DD2D2
+convar_name_hash_table = 301A0
+interface_engine_cvar = 3FA9C
+m_bDormant = ED
+m_pStudioHdr = 2950
+anim_overlays = 2990
+set_abs_angles = 1EA950
+set_abs_origin = 1EA790
+force_update_spectator_glow = 3DD09A
+find_hud_element = 53B03A40
+
+[netvars]
+# Player Properties
+m_ArmorValue = 117CC
+m_iHealth = 100
+m_iTeamNum = F4
+m_lifeState = 25F
+m_fFlags = 104
+m_bSpotted = 93D
+m_bSpottedByMask = 980
+m_iCrosshairId = 117DC
+m_iCompetitiveRanking = 1A84
+m_iCompetitiveWins = 1B88
+m_bGunGameImmunity = 9990
+m_bHasDefuser = 117DC
+m_bHasHelmet = 117C0
+m_bIsDefusing = 997C
+m_bIsScoped = 9974
+m_flLowerBodyYawTarget = 9ADC
+
+# Movement and Position
+m_vecOrigin = 138
+m_vecVelocity = 114
+m_vecViewOffset = 108
+m_aimPunchAngle = 303C
+m_aimPunchAngleVel = 3048
+m_viewPunchAngle = 3030
+m_thirdPersonViewAngles = 31E4
+m_angEyeAnglesX = 117D0
+m_angEyeAnglesY = 117D4
+m_MoveType = 25B
+m_Local = 2FCC
+
+# Weapon Properties
+m_hActiveWeapon = 2F08
+m_hMyWeapons = 2F08
+m_iClip1 = 3274
+m_flNextPrimaryAttack = 3248
+m_bInReload = 3248
+m_fAccuracyPenalty = 3340
+m_iState = 3268
+m_flNextAttack = 2D80
+m_iItemDefinitionIndex = 2FBA
+m_iEntityQuality = 2FBC
+m_iItemIDHigh = 2FD0
+m_iAccountID = 2FD8
+m_nFallbackPaintKit = 31D8
+m_nFallbackSeed = 31DC
+m_nFallbackStatTrak = 31E4
+m_flFallbackWear = 31E0
+m_szCustomName = 304C
+m_OriginalOwnerXuidLow = 31D0
+m_OriginalOwnerXuidHigh = 31D4
+m_zoomLevel = 33E0
+m_bStartedArming = 3400
+
+# Bomb Properties
+m_bBombTicking = 2990
+m_bBombDefused = 29C0
+m_flC4Blow = 29A0
+m_hBombDefuser = 29C4
+m_flTimerLength = 29A4
+m_flDefuseLength = 29B8
+m_flDefuseCountDown = 29BC
+m_nBombSite = 2994
+
+# Visuals and Rendering
+m_clrRender = 70
+m_flFlashDuration = 10470
+m_flFlashMaxAlpha = 1046C
+m_iGlowIndex = 10470
+m_bUseCustomBloomScale = 9DA
+m_bUseCustomAutoExposureMin = 9D8
+m_bUseCustomAutoExposureMax = 9D9
+m_flCustomBloomScale = 9E4
+m_flCustomAutoExposureMin = 9DC
+m_flCustomAutoExposureMax = 9E0
+m_iFOV = 31F4
+m_iFOVStart = 31F8
+m_iDefaultFOV = 333C
+
+# Game Rules
+cs_gamerules_data = 0
+m_SurvivalRules = D00
+m_SurvivalGameRuleDecisionTypes = 1328
+m_bIsValveDS = 7C
+m_bFreezePeriod = 20
+m_bBombPlanted = 9A5
+m_bIsQueuedMatchmaking = 74
+
+# Entity and Model
+m_Collision = 320
+m_CollisionGroup = 474
+m_rgflCoordinateFrame = 474
+m_hOwner = 29DC
+m_hOwnerEntity = 14C
+m_nModelIndex = 258
+m_nViewModelIndex = 29D0
+m_hViewModel = 3308
+m_dwBoneMatrix = 268C
+m_nForceBone = 268C
+m_iMostRecentModelBoneCounter = 268C
+m_flLastBoneSetupTime = 28C0
+m_flSimulationTime = 268
+m_nTickBase = 3440
+
+# Observer
+m_hObserverTarget = 339C
+m_iObserverMode = 3388
+
+# Miscellaneous
+m_iShotsFired = 103E0
+m_szLastPlaceName = 35C4
