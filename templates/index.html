@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTP File Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1e2f 0%, #2a2a4a 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            background: linear-gradient(90deg, #ff6f61, #ffb88c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin: 20px 0;
+            color: #ffb88c;
+        }
+
+        .file-list {
+            margin-bottom: 40px;
+        }
+
+        .file-item {
+            background: linear-gradient(145deg, #2a2a4a, #3a3a6a);
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideUp 0.5s ease-out forwards;
+        }
+
+        .file-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .file-item .file-name {
+            font-weight: 600;
+            font-size: 1.2em;
+            color: #e0e0e0;
+        }
+
+        .file-item .size {
+            font-size: 0.9em;
+            color: #aaa;
+            margin-left: 10px;
+        }
+
+        .file-item a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .file-item a.preview {
+            background: linear-gradient(90deg, #ff6f61, #ffb88c);
+        }
+
+        .file-item a.download {
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+        }
+
+        .file-item a.delete {
+            background: linear-gradient(90deg, #ff4757, #ff6b81);
+        }
+
+        .file-item a:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ffb88c, transparent);
+            margin: 30px 0;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: #ffb88c;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            background-color: #3a3a6a;
+            border: 1px solid #ffb88c;
+            border-radius: 5px;
+            color: #e0e0e0;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="file"]:hover {
+            border-color: #ff6f61;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: linear-gradient(90deg, #ff6f61, #ffb88c);
+            border: none;
+            border-radius: 25px;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        .flash-messages {
+            margin-bottom: 20px;
+        }
+
+        .flash-messages li {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            list-style: none;
+            font-size: 1em;
+            text-align: center;
+        }
+
+        .flash-messages li.error {
+            background: linear-gradient(90deg, #ff4757, #ff6b81);
+        }
+
+        .flash-messages li.success {
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>FTP File Manager</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flash-messages">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <div class="file-list">
+        <h2>Файлы на сервере (Общий размер: {{ total_size }})</h2>
+        {% for file, size in files %}
+            <div class="file-item">
+                <div>
+                    <span class="file-name">{{ file }}</span>
+                    <span class="size">{{ size }}</span>
+                </div>
+                <div>
+                    <a href="{{ url_for('preview', filename=file) }}" class="preview">Предпросмотр</a>
+                    <a href="{{ url_for('download', filename=file) }}" class="download">Скачать</a>
+                    <a href="{{ url_for('delete', filename=file) }}" class="delete">Удалить</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <hr>
+    <h3>Загрузить файл</h3>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Загрузить</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Предпросмотр файла</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1e2f 0%, #2a2a4a 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            background: linear-gradient(90deg, #ff6f61, #ffb88c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        .file-preview {
+            background: linear-gradient(145deg, #2a2a4a, #3a3a6a);
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        .file-preview:hover {
+            transform: scale(1.02);
+        }
+
+        .file-preview img {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .file-preview img:hover {
+            transform: scale(1.05);
+        }
+
+        .file-preview video {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 10px;
+        }
+
+        .file-preview pre {
+            background: #222;
+            color: #e0e0e0;
+            padding: 20px;
+            border-radius: 10px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 1em;
+            max-height: 500px;
+            overflow-y: auto;
+            text-align: left;
+        }
+
+        .copy-button {
+            padding: 12px 25px;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            border: none;
+            border-radius: 25px;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .copy-button:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ffb88c, transparent);
+            margin: 30px 0;
+        }
+
+        a {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(90deg, #ff6f61, #ffb88c);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Предпросмотр файла: {{ file }}</h1>
+    <div class="file-preview">
+        {% if file_type == 'text' %}
+            <pre id="file-content">{{ file_content }}</pre>
+            <button class="copy-button" onclick="copyToClipboard()">Скопировать</button>
+        {% elif file_type == 'image' %}
+            <img src="{{ url_for('download', filename=file) }}" alt="Image preview">
+        {% elif file_type == 'video' %}
+            <video controls>
+                <source src="{{ url_for('download', filename=file) }}" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        {% else %}
+            <p>Не поддерживаемый тип файла.</p>
+        {% endif %}
+    </div>
+    <hr>
+    <a href="{{ url_for('index') }}">Назад</a>
+</div>
+<script>
+    function copyToClipboard() {
+        const content = document.getElementById('file-content').innerText;
+        navigator.clipboard.writeText(content).then(() => {
+            alert('Содержимое скопировано в буфер обмена!');
+        }).catch(err => {
+            console.error('Ошибка копирования: ', err);
+            alert('Ошибка при копировании содержимого.');
+        });
+    }
+</script>
+</body>
+</html>
